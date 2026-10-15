@@ -4,7 +4,6 @@ const slideshowTotal = slideshowIMGs+slideshowVIDs;
 document.addEventListener("DOMContentLoaded", () => {
     /*const InstagramLogo = document.getElementById("Instagram");
     console.log("hi")
-    // your rest of the code here...
         console.log(text.getBoundingClientRect());
         console.log("hi");*/
     
@@ -12,13 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const bwdslideshowButton = document.getElementById("bwdSlideshowButton");
     let slideshowIndex = 0;
     let slideshowIMG=document.getElementById("slideshowIMG");
-    slideshowIMG.src=`images/folders/Slideshow/img/img_0.png`;
+    slideshowIMG.src=`./images/folders/Slideshow/img/img_0.png`;
 
     fwdslideshowButton.addEventListener("click", () => {
         slideshowIndex++;
         slideshowIndex=slideshowIndex%slideshowTotal;
         if (slideshowIndex<=slideshowIMGs) {
-            slideshowIMG.src=`images/folders/Slideshow/img/img_${slideshowIndex}.png`;
+            slideshowIMG.src=`./images/folders/Slideshow/img/img_${slideshowIndex}.png`;
         }/* else {
             slideshowIMG.src=`images/folders/Slideshow/mov/img_${slideshowIndex}.mov` // need to make it count only for pngs and movs
         }*/
@@ -27,27 +26,30 @@ document.addEventListener("DOMContentLoaded", () => {
         slideshowIndex--;
         slideshowIndex=(slideshowIndex+slideshowTotal)%slideshowTotal;
         if (slideshowIndex<=slideshowIMGs) {
-            slideshowIMG.src=`images/folders/Slideshow/img/img_${slideshowIndex}.png`;
+            slideshowIMG.src=`./images/folders/Slideshow/img/img_${slideshowIndex}.png`;
         }/* else {
             slideshowIMG.src=`images/folders/Slideshow/mov/img_${slideshowIndex}.mov`
         }*/
         
     })
-    const nameField = document.getElementsById("NameInput");
-    const emailField = document.getElementById("EmailInput");
+    const fieldButton = document.getElementById("fieldButton");
     const status = document.getElementById("status");
-    nameField.addEventListener("input", function() {
-        if (nameField.value.trim()==="") {
-            status.textContent="Please enter your name.";
-        } else {
-            status.textContent=`Hello, ${nameField.value}!`
+    fieldButton.addEventListener("click",function() {
+        event.preventDefault(); // Prevents the default submission
+        const nameField = document.getElementById("NameInput");
+        const emailField = document.getElementById("EmailInput");
+        if (!nameField||!emailField) {
+            status.textContent="Please fill in both fields";
+            return;
         }
-    })
-    emailField.addEventListener("input",function() {
-        if (emailField.value.trim()==="") {
-            status.textContent="Please enter your email.";
-        } else {
-            status.textContent=`Your email is valid.`;
+        if (!nameField.value.trim() || !emailField.value.trim()) {
+            status.textContent = "Please fill in both fields";
+            return;
         }
-    })
+        console.log(`Name: ${nameField.value}`);
+        console.log(`Email: ${emailField.value}`);
+        nameField.value=" ";
+        emailField.value=" ";
+        status.textContent="Submitted Successfully";
+    });
 });
