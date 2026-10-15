@@ -35,6 +35,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     const nameField = document.getElementsById("NameInput");
     const emailField = document.getElementById("EmailInput");
-    
-
+    const status = document.getElementById("status");
+    nameField.addEventListener("input", function() {
+        if (nameField.value.trim()==="") {
+            status.textContent="Please enter your name.";
+        } else {
+            status.textContent=`Hello, ${nameField.value}!`
+        }
+    })
+    emailField.addEventListener("input",function() {
+        if (emailField.value.trim()==="") {
+            status.textContent="Please enter your email.";
+        } else {
+            status.textContent=`Your email is valid.`;
+        }
+    })
 });
