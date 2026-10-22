@@ -1,5 +1,5 @@
 const slideshowIMGs = 3;
-const slideshowVIDs =0;
+const slideshowVIDs = 0;
 const slideshowTotal = slideshowIMGs+slideshowVIDs;
 document.addEventListener("DOMContentLoaded", () => {
     /*const InstagramLogo = document.getElementById("Instagram");

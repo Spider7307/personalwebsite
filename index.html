@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <link href="style.css" rel="stylesheet">
 <script src= "script.js"></script>
 
-<meta charset="UTF-8">
-<meta name="description" content="Welcome to my website. Time to learn about what makes me me.">
-<html>
-<title>Spencer Oldoerp</title>
 <head>
-    <div>Who I Am</div>
-    <p class="paragraph">I am a freshman at UC Berkeley studying Computer Science in the College of Computing, Data Science, and Society. 
-        <ul>
-            <li class="paragraph">I am Eagle Scout of the class of 2024.</li>
-            <li class="paragraph">One of my hobbies is rock climbing.</li>
-        </ul>
-    </p>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to my website. Time to learn about what makes me me.">
+    <html>
+    <title>Spencer Oldoerp</title>
 </head>
 <body>
+    <header>
+        <div>Who I Am</div>
+        <p class="paragraph">I am a freshman at UC Berkeley studying Computer Science in the College of Computing, Data Science, and Society. 
+            <ul>
+                <li class="paragraph">I am Eagle Scout of the class of 2024.</li>
+                <li class="paragraph">One of my hobbies is rock climbing.</li>
+            </ul>  <!--for html req: Add Page and link to page, another ul (list) of the project-->
+        </p>
+    </header>
     <slideshow>
         <slideshowcentering>
             <ssTitle>CLIMBING AT MOSAIC</ssTitle>
@@ -52,10 +54,10 @@
 </body>
 <footer>
     <bottombar>
-        <div class="bottombar">Home</div>
-        <div class="bottombar">About Us</div>
-        <div class="bottombar">Career</div>
-    </div></bottombar>
+        <a href="index.html" class="bottombar">Home</a>
+        <a href="AboutUs.html" class="bottombar">About Us</a>
+        <a href="Career.html" class="bottombar">Career</a>
+    </bottombar>
     <form>
         <p>Name:</p><input id="NameInput">
         <p>Email:</p><input id="EmailInput">
@@ -65,5 +67,4 @@
     </form>
 </footer>
 <br><br><br>
-
 </html>
