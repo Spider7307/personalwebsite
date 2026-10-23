@@ -145,3 +145,12 @@ bottombar {
     font-family:DarkSouls;
     src: url(fonts/folders/AGaramondPro-Bold.ttf);
 }
+h1.ListHeading {
+    margin-left:0px;
+    margin-bottom:0px;
+}
+
+p.ListDesc {
+    margin-top:0px;
+    margin-left:40px;
+}
